@@ -3,7 +3,7 @@ import { extend } from 'flarum/common/extend';
 import UserCard from 'flarum/forum/components/UserCard';
 import ItemList from 'flarum/common/utils/ItemList';
 import type Mithril from 'mithril';
-import UserStat from '../components/UserStat';
+import UsercardStat from '../components/UsercardStat';
 
 export default function extendUserCard() {
   extend(UserCard.prototype, 'infoItems', function (items: ItemList<Mithril.Children>) {
@@ -22,7 +22,7 @@ export default function extendUserCard() {
 
     items.add(
       'discussion-count',
-      <UserStat
+      <UsercardStat
         icon="fas fa-comment"
         displayText={app.translator.trans('blomstra-usercard-stats.forum.user.discussion-count', { count: user.discussionCount() })}
       />,
@@ -31,7 +31,7 @@ export default function extendUserCard() {
 
     items.add(
       'comment-count',
-      <UserStat
+      <UsercardStat
         icon="fas fa-comments"
         displayText={app.translator.trans('blomstra-usercard-stats.forum.user.post-count', { count: user.commentCount() })}
       />,
