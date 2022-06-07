@@ -8,12 +8,6 @@ import UsercardStat from '../components/UsercardStat';
 export default function extendUserCard() {
   extend(UserCard.prototype, 'infoItems', function (items: ItemList<Mithril.Children>) {
 
-    // Required until the relevant extensions are updated to set priorities
-    // fof/gamification
-    if (items.has('points')) items.setPriority('points', 50);
-    // fof/best-answer
-    if (items.has('best-answer-count')) items.setPriority('best-answer-count', 55);
-
     const user = this.attrs.user;
 
     items.add(
