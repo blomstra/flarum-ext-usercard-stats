@@ -7,10 +7,6 @@ import UsercardStat from '../components/UsercardStat';
 
 export default function extendUserCard() {
   extend(UserCard.prototype, 'infoItems', function (items: ItemList<Mithril.Children>) {
-    // Only required until https://github.com/flarum/framework/pull/3436
-    // Remove 1.4
-    if (items.has('lastSeen')) items.setPriority('lastSeen', 100);
-    if (items.has('joined')) items.setPriority('joined', 90);
 
     // Required until the relevant extensions are updated to set priorities
     // fof/gamification
